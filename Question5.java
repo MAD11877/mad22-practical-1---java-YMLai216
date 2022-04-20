@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.*;
 
 public class Question5
 {
@@ -26,7 +27,33 @@ public class Question5
      * Hint: Use a loop to get input. Use another 2 loops to find the mode
      */
      
+    List<Integer> list=new LinkedList<Integer>();  
     Scanner in = new Scanner(System.in);
+    System.out.print(""); // Input number of times to loop//
+    int i = in.nextInt();
+    while (i > 0) {
+      Scanner un = new Scanner(System.in);
+      System.out.print(""); // Input integers//
+      int u = un.nextInt();
+      list.add(u);
+      i--;
+    }
+    int Value = 0;
+    int MaxCount = 0;
+    for (int u: list) {
+      int count = 0;
+       for (int n: list) {
+         if (n == u) {
+           count++;
+         }
+        }
+        if (count > MaxCount) 
+        {
+            MaxCount = count;
+            Value = u;
+        }
+      }
+    System.out.print(Value); // Prints mode value//
     
   }
 }
